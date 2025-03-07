@@ -1,0 +1,13 @@
+models:
+  - type: main
+    engine: openai
+    model: gpt-3.5-turbo-instruct
+
+tracing:
+  enabled: true
+  adapters:
+    - name: ArizePhoenix
+      project_name: "nemo_guardrails"
+      arize_phoenix_batch: "false"
+      resource_attributes:
+        env: "production"

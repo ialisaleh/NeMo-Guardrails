@@ -55,5 +55,8 @@ RUN nemoguardrails --help
 # Ensure the entry point is installed as a script
 RUN poetry install --all-extras --no-interaction --no-ansi
 
+# Install required packages
+RUN poetry add arize-phoenix-otel openinference-instrumentation-langchain
+
 ENTRYPOINT ["poetry", "run", "nemoguardrails"]
 CMD ["server", "--verbose", "--config=/config"]

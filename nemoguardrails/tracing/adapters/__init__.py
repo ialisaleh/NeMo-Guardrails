@@ -20,8 +20,10 @@ from .registry import register_log_adapter
 register_log_adapter(FileSystemAdapter, "FileSystem")
 
 try:
+    from .arize_phoenix import ArizePhoenixAdapter
     from .opentelemetry import OpenTelemetryAdapter
 
+    register_log_adapter(ArizePhoenixAdapter, "ArizePhoenix")
     register_log_adapter(OpenTelemetryAdapter, "OpenTelemetry")
 
 except ImportError:
